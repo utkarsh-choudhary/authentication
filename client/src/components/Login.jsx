@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/login', { email, password });
+      const response = await axios.post('https://deploy-1-smms.onrender.com/api/auth/login', { email, password });
       localStorage.setItem('token', response.data.token); // Save token to local storage
       console.log(response.data);
 
@@ -30,7 +30,7 @@ const Login = () => {
       // console.log('Google Token:', googleToken);
 
       // Send the Google token to the backend for authentication
-      const res = await axios.post('http://localhost:5001/api/auth/google-login', { token: googleToken });
+      const res = await axios.post('https://deploy-1-smms.onrender.com/api/auth/google-login', { token: googleToken });
       localStorage.setItem('token', res.data.token); // Save token from backend
       console.log('Google Login Successful:', res.data);
 

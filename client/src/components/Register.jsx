@@ -13,7 +13,7 @@ const Register = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5001/api/auth/register', {
+            const response = await axios.post('https://deploy-1-smms.onrender.com/api/auth/register', {
                 name,
                 email,
                 password,
